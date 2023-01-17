@@ -1,0 +1,16 @@
+Nessa aula vamos apenas iniciar um novo projeto
+
+criei uma pasta nova chamada projeto-calculadora-react
+e dentro dela vou dar o comando:
+
+create-react-app calculadora
+
+fiz também um novo repositório para essa aula chamada:
+
+chamado Projeto Calculadora React,e para clonar e começar
+a mandar para esse novo repositório, peguei o HTTP
+
+após isso dei o seguinte comando:
+
+git clone e a url do meu repositório, já clonou na pasta
+desejada.
