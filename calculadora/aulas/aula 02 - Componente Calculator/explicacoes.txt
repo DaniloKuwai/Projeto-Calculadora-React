@@ -1,0 +1,71 @@
+vamos iniciar nosso projeto, primeira coisa, vamos criar dentro de src 2 arquivos:
+
+Calculator.css e Calculator.jsx, um para o estilo e o outro para o nosso componente jsx
+
+segue código do nosso Calculator.jsx
+
+import React, {Component} from 'react'
+import './Calculator.css'
+
+export default class Calculator extends Component {
+    render(){
+        return(
+            <div className="calculator">
+                
+            </div>
+        )
+    }
+}
+
+criamos uma classe, e agora vamos estilizar:
+
+.calculator{
+    height:320px;
+    width:235px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: red;
+}
+
+a fonte foi puxada do google e importado na pasta fonts
+Após a criação vamos importar o arquivo dentro do index.js igual faziamos no App.jsx:
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import Calculator from './main/Calculator';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <div>
+   <h1>Calculadora</h1> 
+  <Calculator></Calculator>
+  </div>
+);
+
+
+reportWebVitals();
+
+
+segue o código do index.js e depois vamos alterar também um pouco do estilo geral em index.css:
+
+@font-face{
+  font-family: 'OswaldiLight';
+  src: url('./fonts/Oswald-Light.ttf');
+}
+
+* {
+  font-family: 'OswaldLight','monospace';
+}
+
+body{
+  display:flex;
+  height:100vh;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+
+  color:#fff;
+  background: linear-gradient(to right, rgb(83,105,118), rgb(41,46,73));
+}
