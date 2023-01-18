@@ -6,6 +6,9 @@
 
     display:grid;/*Com o display grid os números estavam meio bagunçados, porém usando o display grid ele alinhou um abaixo do outro*/
     grid-template-columns: repeat(4,25%);/*essa propriedade define os itens dividios em 4 colunas e ocupando cada um 25% do espaço da minha div*/
-    grid-auto-rows: 48px 48px 48px 48px 48px;/*essa propriedade define as linhas a quantidade de pixel que os itens vão ocupar*/
+    grid-auto-rows: 1fr 48px 48px 48px 48px 48px;/*essa propriedade define as linhas a quantidade de pixel que os itens vão ocupar*/
+
+    /*O 1fr quer dizer um fragmento, ou seja ele vai pegar um fragmento que sobrou.*/
+
 }
 

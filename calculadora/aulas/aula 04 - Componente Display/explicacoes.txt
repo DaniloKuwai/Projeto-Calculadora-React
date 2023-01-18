@@ -1,0 +1,71 @@
+Nessa aula, vamos criar nosso display, dentro de components, vamos criar 2 arquivos Display.css e Display.jsx
+
+dentro de Display.jsx:
+
+import React from "react";
+import './Display.css'
+
+export default function Display(props){
+    return(
+        <div className="display">{props.value}</div>
+    )
+}
+
+
+Agora vamos estilizar nosso display:
+
+.display {
+    grid-column: span 4;/*Esse  span define quantas linhas do meu grid eu vou ocupar, ou seja
+    quantas linhas o display vai ocupar da tela*/
+    background-color: #0004;
+
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    padding:20px;
+    font-size:2.1em;
+    overflow: hidden;
+}
+
+vai haver uma pequena alteração no arquivo Calculator.css
+
+grid-auto-rows: 1fr 48px 48px 48px 48px 48px;/*essa propriedade define as linhas a quantidade de pixel que os itens vão ocupar*/
+
+    /*O 1fr quer dizer um fragmento, ou seja ele vai pegar um fragmento que sobrou.*/
+
+Após essa alteração vamos apenas importar nosso componente display no Calculator.jsx
+
+import React, {Component} from 'react'
+import './Calculator.css'
+
+import Button from '../components/Button'
+import Display from '../components/Display'
+
+export default class Calculator extends Component {
+    render(){
+        return(
+            <div className="calculator">
+                <Display value={100}></Display>
+                <Button label="AC"></Button>
+                <Button label="/"></Button>
+                <Button label="7"></Button>
+                <Button label="8"></Button>
+                <Button label="9"></Button>
+                <Button label="*"></Button>
+                <Button label="5"></Button>
+                <Button label="6"></Button>
+                <Button label="-"></Button>
+                <Button label="1"></Button>
+                <Button label="2"></Button>
+                <Button label="3"></Button>
+                <Button label="+"></Button>
+                <Button label="0"></Button>
+                <Button label="."></Button>
+                <Button label="="></Button>
+                
+            </div>
+        )
+    }
+}
+
+e Adicionamos o nº 100 para ficar mostrando no display
