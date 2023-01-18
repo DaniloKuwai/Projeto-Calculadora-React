@@ -1,0 +1,81 @@
+Nessa aula vamos começar a criar os botões da nossa calculadora, observe algumas técnicas diferentes
+de css utilizadas nessa aula e como é mais fácil criar os números separandoo por componente. Primeiro
+
+vamos criar uma pasta chamada components dentro de src. Após isso, vamos criar 2 arquivos, o Button.jsx
+e o Button.css.
+
+Dentro do button.jsx:
+
+import React from "react";
+import './Buttoon.css'
+
+export default function Button(props){
+    return(
+        <button className="button">{props.label}</button>
+    )
+}
+
+o props.label vai mostrar os numeros colado no componente Calculator.jsx
+
+segue o Button.css:
+
+:root{
+    --bg-button: #f0f0f0;
+    --border-button: solid 1px #888;
+}
+
+.button {
+    font-size: 1.4rem;
+    background-color: var(--bg-button);
+    border:none;
+    border-right:var(--border-button);
+    border-bottom: var(--border-button);
+    outline:none;
+}
+
+Dentro do Calculator.jsx vamos importar esse button.jsx agora:
+
+import React, {Component} from 'react'
+import './Calculator.css'
+
+import Button from '../components/Button'
+
+export default class Calculator extends Component {
+    render(){
+        return(
+            <div className="calculator">
+                <Button label="AC"></Button>
+                <Button label="/"></Button>
+                <Button label="7"></Button>
+                <Button label="8"></Button>
+                <Button label="9"></Button>
+                <Button label="*"></Button>
+                <Button label="5"></Button>
+                <Button label="6"></Button>
+                <Button label="-"></Button>
+                <Button label="1"></Button>
+                <Button label="2"></Button>
+                <Button label="3"></Button>
+                <Button label="+"></Button>
+                <Button label="0"></Button>
+                <Button label="."></Button>
+                <Button label="="></Button>
+                
+            </div>
+        )
+    }
+}
+
+veja como é mais fácil digitar os números e ir acrescentando, e por fim vamos mexer no calculator.css
+
+.calculator{
+    height:320px;
+    width:235px;
+    border-radius: 5px;
+    overflow: hidden;
+
+    display:grid;/*Com o display grid os números estavam meio bagunçados, porém usando o display grid ele alinhou um abaixo do outro*/
+    grid-template-columns: repeat(4,25%);/*essa propriedade define os itens dividios em 4 colunas e ocupando cada um 25% do espaço da minha div*/
+    grid-auto-rows: 48px 48px 48px 48px 48px;/*essa propriedade define as linhas a quantidade de pixel que os itens vão ocupar*/
+}
+
