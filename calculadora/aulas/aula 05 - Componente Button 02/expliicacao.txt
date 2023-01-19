@@ -1,3 +1,78 @@
+Nessa aula vamos adicionar mais estilos, porém estilos condicionais na nossa calculadora
+
+exemplo, se clicar a cor do botão vai ficar de forma x, caso não vai ficar de forma y, vamos
+colocar essas condicionais dentro do className. Para isso, colocamos dentro do nosso
+className exemplo:
+
+<button className={`
+            button
+            ${props.operation ? 'operation' : ''}
+        `}>
+
+se o botão estiver em operação ele vai aplicar a classe operation, se não não vai aplicar 
+nenhuma classe, essas classes foram criadas em Button.css
+
+e porquê está usando ${} para interpolar uma variável e é em js
+
+o código do nosso button.jsx vai ficar dessa forma:
+
+import React from "react";
+import './Button.css'
+
+export default function Button(props){
+    return(
+        <button onClick={e => props.click && props.click(props.label)} className={`
+            button
+            ${props.operation ? 'operation' : ''}
+            ${props.double ? 'double' : ''}
+            ${props.triple ? 'triple' : ''}
+        `}>
+            {props.label}
+            </button>
+    )
+}
+
+o nosso Button.css vai ficar dessa forma:
+
+:root{
+    --bg-button: #f0f0f0;
+    --border-button: solid 1px #888;
+}
+
+.button {
+    font-size: 1.4rem;
+    background-color: var(--bg-button);
+    border:none;
+    border-right:var(--border-button);
+    border-bottom: var(--border-button);
+    outline:none;
+}
+
+/*Alterações aula 05 Componente Button 02*/
+
+.button:active{
+    background-color: #ccc ;
+}
+
+.button.double{
+    grid-column: span 2;
+}
+
+.button.triple{
+    grid-column: span 3;
+}
+
+.button.operation{
+    background-color: #fa8231;
+    color:#fff;
+}
+
+.button.operation:active{
+    background-color:#fa8231cc;
+}
+
+e no final o código Calculator.jsx vai ficar dessa forma:
+
 import React, {Component} from 'react'
 import './Calculator.css'
 
