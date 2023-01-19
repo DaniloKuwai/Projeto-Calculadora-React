@@ -37,6 +37,7 @@ export default class Calculator extends Component {
                 <Button label="8" click={this.addDigit}> </Button>
                 <Button label="9" click={this.addDigit}> </Button>
                 <Button label="*" click={this.setOperation} operation> </Button>
+                <Button label="4" click={this.addDigit}> </Button>
                 <Button label="5" click={this.addDigit}> </Button>
                 <Button label="6" click={this.addDigit}> </Button>
                 <Button label="-" click={this.setOperation} operation> </Button>
